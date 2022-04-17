@@ -18,20 +18,20 @@ class TravellerTest {
         traveller.bookFlight()
 //    ● THEN: The flight is booked
 //    AND the flight is added to their list of flight reservations
-        assertThat(traveller.bookings.last == flight).isTrue()
+        assertThat(traveller.bookings.last() == flight).isTrue()
     }
 
     @Test
     fun `Traveller books a flight with no passport`() {
 //    ● GIVEN: A Traveller with no passport
 //    AND a valid flight
-        val traveller:Traveller = Traveller("Joe", "joe@gmail.com", listOf<Flight>())
+        val traveller:Traveller = Traveller("Joe", "joe@gmail.com", null, listOf<Flight>())
         val flight:Flight = Flight("Pearson Airport", "Vancouver Airport", 1000.0)
 //    ● WHEN: The traveller attempts to book the flight
         traveller.bookFlight()
 //    ● THEN: The flight is is not booked
 //    AND the flight is not added to their list of flight reservations
-        assertThat(traveller.bookings.last != flight).isTrue()
+        assertThat(traveller.bookings.last() != flight).isTrue()
     }
 
     @Test
