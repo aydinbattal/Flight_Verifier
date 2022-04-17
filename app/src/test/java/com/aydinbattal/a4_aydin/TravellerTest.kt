@@ -15,10 +15,9 @@ class TravellerTest {
         val traveller:Traveller = Traveller("Joe", "joe@gmail.com", "CAN123321", listOf<Flight>())
         val flight:Flight = Flight("Pearson Airport", "Vancouver Airport", 1000.0)
 //    ● WHEN: The traveller attempts to book the flight
-        traveller.bookFlight()
 //    ● THEN: The flight is booked
 //    AND the flight is added to their list of flight reservations
-        assertThat(traveller.bookings.last() == flight).isTrue()
+        assertThat(traveller.bookFlight(flight)).isTrue()
     }
 
     @Test
@@ -28,10 +27,9 @@ class TravellerTest {
         val traveller:Traveller = Traveller("Joe", "joe@gmail.com", null, listOf<Flight>())
         val flight:Flight = Flight("Pearson Airport", "Vancouver Airport", 1000.0)
 //    ● WHEN: The traveller attempts to book the flight
-        traveller.bookFlight()
 //    ● THEN: The flight is is not booked
 //    AND the flight is not added to their list of flight reservations
-        assertThat(traveller.bookings.last() != flight).isTrue()
+        assertThat(traveller.bookFlight(flight)).isFalse()
     }
 
     @Test
@@ -40,7 +38,7 @@ class TravellerTest {
         val traveller:Traveller = Traveller("Joe", "joe@gmail.com", "CAN123321", listOf<Flight>())
 //        ● WHEN: The ttraveller checks the amount owed for their flights
 //        ● THEN: The cost is 0
-        assertThat(traveller.checkTotalAmount() == 0).isTrue()
+        assertThat(traveller.totalCost == 0).isTrue()
     }
 
     @Test
@@ -52,7 +50,7 @@ class TravellerTest {
 //    ● THEN: The cost is is the price of the single flight
         //1200+(0.35*1000) = 1550
         //traveller.bookings.last().cost
-        assertThat(traveller.checkTotalAmount() == 1550.0).isTrue()
+        assertThat(traveller.totalCost == 1550.0).isTrue()
     }
 
     @Test
@@ -65,6 +63,6 @@ class TravellerTest {
 //    ● WHEN: The ttraveller checks the amount owed for their flights
 //    ● THEN: The cost is is the sum of all flight costs
         //sum: 1585.175 + 1550.0 + 1025.0 = 4160.175
-        assertThat(traveller.checkTotalAmount() == 4160.175).isTrue()
+        assertThat(traveller.totalCost == 4160.175).isTrue()
     }
 }
