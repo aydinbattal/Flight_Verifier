@@ -23,7 +23,7 @@ class FlightTest {
     @Test
     fun `Flight equal to 1000km`(){
 //        ● GIVEN: A flight that is equal to 1000 km in distance
-        val flight:Flight = Flight("Pearson Airport", "Vancouver Airport", 1000)
+        val flight:Flight = Flight("Pearson Airport", "Vancouver Airport", 1000.0)
 //        ● WHEN: The cost of the flight is requested
         val cost = flight.cost
 //        ● THEN: The cost should be computed at $1200 + 0.35 * distance in km
@@ -34,7 +34,7 @@ class FlightTest {
     @Test
     fun `Flight under 1000km`() {
 //    ● GIVEN: A flight that is less than 1000 km in distance
-        val flight:Flight = Flight("Pearson Airport", "Vancouver Airport", 900)
+        val flight:Flight = Flight("Pearson Airport", "Vancouver Airport", 900.0)
 
 //    ● WHEN: The cost of the flight is requested
         val cost = flight.cost
