@@ -15,7 +15,7 @@ class Traveller(val name:String, val email:String, val passport:String? = null, 
         }
 
     fun bookFlight(flight: Flight): Boolean {
-        if (this.passport != null){
+        if (!this.passport.isNullOrEmpty()){
             this.bookings.add(flight)
             return true
         }
