@@ -17,7 +17,7 @@ class FlightTest {
         val cost = flight.cost
 //        THEN: The cost should be computed at $1200 + 0.35 * distance in km
         //1200+(0.35*1100.5) = 1585.175
-        assertThat(cost==1585.175).isTrue()
+        assertThat(cost).isEqualTo(1585.175)
     }
 
     @Test
@@ -28,7 +28,7 @@ class FlightTest {
         val cost = flight.cost
 //        ● THEN: The cost should be computed at $1200 + 0.35 * distance in km
         //1200+(0.35*1000) = 1550
-        assertThat(cost==1550.0).isTrue()
+        assertThat(cost).isEqualTo(1550.0)
     }
 
     @Test
@@ -41,7 +41,7 @@ class FlightTest {
 
 //    ● THEN: The cost should be computed at $350 + 0.75 * distance in km
         //350+(0.75*900) = 1025
-        assertThat(cost==1025.0).isTrue()
+        assertThat(cost).isEqualTo(1025.0)
 
     }
 

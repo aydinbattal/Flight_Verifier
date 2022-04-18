@@ -38,7 +38,7 @@ class TravellerTest {
         val traveller:Traveller = Traveller("Joe", "joe@gmail.com", "CAN123321", mutableListOf<Flight>())
 //        ● WHEN: The ttraveller checks the amount owed for their flights
 //        ● THEN: The cost is 0
-        assertThat(traveller.totalCost == 0.0).isTrue()
+        assertThat(traveller.totalCost).isEqualTo(0.0)
     }
 
     @Test
@@ -50,7 +50,7 @@ class TravellerTest {
 //    ● THEN: The cost is is the price of the single flight
         //1200+(0.35*1000) = 1550
         //traveller.bookings.last().cost
-        assertThat(traveller.totalCost == 1550.0).isTrue()
+        assertThat(traveller.totalCost).isEqualTo(1550.0)
     }
 
     @Test
@@ -63,6 +63,6 @@ class TravellerTest {
 //    ● WHEN: The ttraveller checks the amount owed for their flights
 //    ● THEN: The cost is is the sum of all flight costs
         //sum: 1585.175 + 1550.0 + 1025.0 = 4160.175
-        assertThat(traveller.totalCost == 4160.175).isTrue()
+        assertThat(traveller.totalCost).isEqualTo(4160.175)
     }
 }
