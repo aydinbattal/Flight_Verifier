@@ -1,4 +1,4 @@
-# TDD_Flight_Bookings
+# Flight Verifier
 This application uses Espresso for UI Tests, JUnit 4 and Google Truth assertion library for Unit Tests.
 
 
